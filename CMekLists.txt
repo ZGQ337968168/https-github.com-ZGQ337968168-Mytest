@@ -1,0 +1,24 @@
+
+#最低版本设置
+cmake_minimum_required (VERSION 3.20)
+
+# 指定项目名称和版本
+project (MyProject VERSION 1.0)
+
+# 添加执行文件
+add_executable(MyProject src/main.cpp src/other.cpp)
+
+#用于将some_library库链接到名为MyProject的可执行文件或库中。
+target_link_libraries(MyProject PRIVATE some_library)
+
+# 添加库文件
+add_library(MyLibrary STATIC src/library.cpp)
+
+# 添加测试
+add_test(NAME MyTest COMMAND MyProject)
+
+# 添加自定义命令
+add_custom_command(OUTPUT myfile.txt COMMAND mycommand ARGS arg1 arg2)
+
+# 添加自定义目标
+add_custom_target(mytarget DEPENDS myfile.txt)

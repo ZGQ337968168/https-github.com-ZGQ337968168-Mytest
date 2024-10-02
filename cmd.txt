@@ -1,0 +1,6 @@
+clang-format -style=LLVM -dump-config > f:\ZGQ\vscode\.clang-format
+clang-format.exe -dump-config -style=Webkit >.clang-format
+#这是keil工具用的设置
+-style=file -i !E
+
+-style=file:F:\ZGQ\.clang-format -i !E
